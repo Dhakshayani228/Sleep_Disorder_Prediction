@@ -1,0 +1,35 @@
+vimport os
+import joblib
+from sklearn.preprocessing import LabelEncoder
+
+# Initialize encoders for categorical variables
+encoders = {
+    "Gender": LabelEncoder(),
+    "BMI Category": LabelEncoder(),
+    "Blood Pressure": LabelEncoder(),
+    "Occupation": LabelEncoder(),
+    "Sleep Disorder": LabelEncoder()  # Target variable
+}
+
+# Define known categories for each encoder
+encoders["Gender"].fit(["Male", "Female"])
+encoders["BMI Category"].fit(["Underweight", "Normal", "Overweight", "Obese"])
+encoders["Blood Pressure"].fit(["Low", "Normal", "High"])
+encoders["Occupation"].fit(["Student", "Worker", "Retired", "Unemployed", "Night Shift", "Morning Shift", "Regular Job"])
+encoders["Sleep Disorder"].fit(["Healthy", "Insomnia", "Sleep Apnea"])  # Target labels
+
+# Define the save directory
+save_dir = r"C:\Users\Ramya\Downloads\Projetcs\Sleep_Disorder_Prediction"
+
+# Ensure directory exists
+os.makedirs(save_dir, exist_ok=True)
+
+# Define the save path
+encoder_path = os.path.join(save_dir, "target_encoder.pkl")
+
+# Save encoders
+joblib.dump(encoders, encoder_path)
+
+print(f"✅ Target encoders saved successfully at: {encoder_path}")
+
+
