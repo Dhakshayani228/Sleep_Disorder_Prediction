@@ -30,17 +30,17 @@ def sleep_disorder_prediction(age, gender, sleep_duration, shift_type):
         "Insomnia": {
             "reason": "Difficulty falling or staying asleep due to stress, night shifts, or poor sleep habits.",
             "solution": "Try relaxation techniques, establish a bedtime routine, and consult a healthcare provider if needed.",
-            "note": "⚠️ If symptoms persist, please consult a doctor."
+            "note": " If symptoms persist, please consult a doctor."
         },
         "Sleep Apnea": {
             "reason": "Interrupted breathing during sleep caused by airway blockage or other health conditions.",
             "solution": "Maintain a healthy weight, avoid alcohol, and consider using a CPAP machine or consulting a sleep specialist.",
-            "note": "⚠️ If symptoms persist, please consult a doctor."
+            "note": "If symptoms persist, please consult a doctor."
         },
         "Sleep Irregularity": {
             "reason": "Your sleep pattern is irregular but does not strongly indicate a disorder.",
             "solution": "Consider improving sleep habits and monitoring for further symptoms.",
-            "note": "⚠️ If issues persist, consult a specialist."
+            "note": "If issues persist, consult a specialist."
         }
     }
 
@@ -53,7 +53,7 @@ def sleep_disorder_prediction(age, gender, sleep_duration, shift_type):
     }
 
 # Real-Time User Input Simulation
-print("\n🛏️ Welcome to the Sleep Disorder Prediction System! 🛏️")
+print("\n Welcome to the Sleep Disorder Prediction System!")
 age = int(input("Enter your age: "))
 gender = input("Enter your gender (Male/Female): ").strip().capitalize()
 sleep_duration = float(input("Enter your sleep duration (in hours): "))
@@ -61,10 +61,10 @@ print("Shift Type Options: Regular Job, Night Shift, Morning Shift, Retired, Une
 shift_type = input("Enter your occupation type: ").strip().capitalize()
 
 # Run Prediction
-print("\n🔍 Sleep Disorder Prediction")
+print("\n Sleep Disorder Prediction")
 result = sleep_disorder_prediction(age, gender, sleep_duration, shift_type)
 
 # Display Result
-print("\n📋 Prediction Results:")
+print("\n Prediction Results:")
 for key, value in result.items():
     print(f"{key}: {value}")
